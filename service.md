@@ -38,6 +38,7 @@ Next, add the service to the `providers` array, so that the NgModule looks like 
   providers: [TodoListService],
   bootstrap: [AppComponent]
 })
+export class AppModule { }
 ```
 
 That will allow us to create the service instance and to use it in any place of our app.
@@ -47,7 +48,7 @@ That will allow us to create the service instance and to use it in any place of 
 We now need to move the `todoList` array from the component to our new service. The service will now have:
 
 ```javascript
-private todoList = [
+  private todoList = [
     { title: 'install NodeJS' },
     { title: 'install Angular CLI' },
     { title: 'create new app' },
