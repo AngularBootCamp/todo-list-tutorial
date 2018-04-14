@@ -2,11 +2,11 @@
 
 ## What and why
 
-Services are JavaScript functions that are responsible for doing a specific task only. Angular services are injected using Dependency Injection mechanism and include the value, function or feature which is required by the application. In our ToDo app, we will need a service to save all the tasks and to use it by injecting it into the components.
+In Angular, a service is (typically) a JavaScript class that's responsible for performing a specific task needed by your application. In our todo-list application, we'll use a service to save all the tasks, and use it by injecting it into the components.
 
 ## Create
 
-In order to create a new service by **angular-cli**, we need to type this command on the root folder:
+In order to create a new service with the Angular CLI, make sure you're in the root folder of your application, then enter this command:
 
 ```
 ng g s todoList
@@ -14,7 +14,7 @@ ng g s todoList
 
 This command will generate the service and put it under `src/app/todo-list.service.ts`.
 
-## Provide in ngModule 
+## Provide in ngModule
 
 To start using the service, we first need to provide it in an NgModule. Start by adding this code in `/src/app/app.module.ts`:
 
@@ -41,7 +41,7 @@ Next, add the service to the `providers` array, so that the NgModule looks like 
 export class AppModule { }
 ```
 
-That will allow us to create the service instance and to use it in any place of our app.
+This tells Angular to provide (that is, create and inject) an instance of our service when we ask for it anywhere in our application.
 
 ## Move list from component to service
 
@@ -86,25 +86,31 @@ export class TodoListService {
 }
 ```
 
-## Inject to list-manager component and use the service 
+## Inject into list-manager component and use the service
 
-After creating the service instance, we can inject it to our list-manager component. Go to /src/app/list-manager/list-manager.component.ts file and add the folllowing import code:
+After creating the service, we can inject it into our list-manager component. Go to `src/app/list-manager/list-manager.component.ts` and add the following import code:
 
 ```javascript
-import { TodoListService } from '../todo-list.service'; 
+import { TodoListService } from '../todo-list.service';
 ```
 
-And just use it in ListManagerComponent class: Remove the todoList array but keep the todoList member and change the constructor to be:
+Now remove the `todoList` array, but keep the `todoList` member:
+
+```javascript
+  todoList;
+```
+
+Change the constructor to be:
 
 ```javascript
 constructor(private todoListService:TodoListService) { }
 ```
 
-And now the todoList will use the service we created on **ngOnInit** function:
+And now use the service to assign the `todoList` array inside the `ngOnInit` method:
 
 ```javascript
 ngOnInit() {
-    this.todoList = this.todoListService.getTodoList();
+  this.todoList = this.todoListService.getTodoList();
 }
 ```
 
