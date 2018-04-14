@@ -12,18 +12,17 @@ In order to create a new service by **angular-cli**, we need to type this comman
 ng g s todoList
 ```
 
-This command will generate the service and put it under src/app/todo-list.service.ts
+This command will generate the service and put it under `src/app/todo-list.service.ts`.
 
 ## Provide in ngModule 
 
-Now, to start using the service, we first need to provide it in the @NgModule component.
-In /src/app/app.module.ts , add an import code:
+To start using the service, we first need to provide it in an NgModule. Start by adding this code in `/src/app/app.module.ts`:
 
 ```javascript
 import { TodoListService } from './todo-list.service';
 ```
 
-And now add the service to the "providers" array, that the ngModule component will look like this:
+Next, add the service to the `providers` array, so that the NgModule looks like this:
 
 ```javascript
 @NgModule({
@@ -45,7 +44,7 @@ That will allow us to create the service instance and to use it in any place of 
 
 ## Move list from component to service
 
-We now need to move the todoList array from the component to our new service. The service will now have:
+We now need to move the `todoList` array from the component to our new service. The service will now have:
 
 ```javascript
 private todoList = [
@@ -60,7 +59,7 @@ private todoList = [
 
 ## Create method on service to return the list
 
-Now go to the generated service file, found in src/app/todo-list.service.ts , and add a "getTodoList" function that will return the todoList array. The service will look like this:
+Now go to the generated service file, `src/app/todo-list.service.ts`, and add a `getTodoList` method that will return the `todoList` array. The service will look like this:
 
 ```javascript
 import { Injectable } from '@angular/core';
