@@ -84,7 +84,7 @@ Open the file `list-manager.component.css` and paste the following style inside:
   margin: 20px auto;
 }
 
-.todo-app:before, .todo-app:after {
+.todo-app::before, .todo-app::after {
   content: '';
   position: absolute;
   z-index: -1;
@@ -94,7 +94,7 @@ Open the file `list-manager.component.css` and paste the following style inside:
   border-radius: 2px;
 }
 
-.todo-app:after {
+.todo-app::after {
   bottom: -3px;
   left: 0;
   right: 0;
@@ -102,7 +102,7 @@ Open the file `list-manager.component.css` and paste the following style inside:
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.todo-app:before {
+.todo-app::before {
   bottom: -5px;
   left: 2px;
   right: 2px;
