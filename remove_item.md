@@ -6,7 +6,7 @@ The user should be able to remove any item, whether it's still active or complet
 
 First, we need to add the button to the item, so we'll work on the file `item.component.ts`.
 
-Add a "remove" button to the item template, with a `click` event handler that calls a `removeItem()` method (which we'll create in a moment):
+Add a "remove" button to the item template, with a `click` event handler that calls a `removeItem` method (which we'll create in a moment):
 
 ```html
 <button (click)="removeItem()">
@@ -54,7 +54,7 @@ removeItem(item) {
 
 ## Remove the todo item from local storage
 
-Removing the item is handled in the service. Open `todo-list.service.ts` and add a method called `removeItem()` to the `TodoListService` class:
+Removing the item is handled in the service. Open `todo-list.service.ts` and add a method called `removeItem` to the `TodoListService` class:
 
 ```ts
 removeItem(item) {
@@ -62,4 +62,4 @@ removeItem(item) {
 }
 ```
 
-This method calls the `destroy()` method we already created in `todo-list-storage.service.ts` earlier.
+This method calls the `destroy` method we already created in `todo-list-storage.service.ts` earlier.

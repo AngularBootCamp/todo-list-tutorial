@@ -15,13 +15,13 @@ Let's go ahead and add a checkbox into our `item.component.ts` file. Place the f
   <input type="checkbox"/>
 ```
 
-Now, in order for the checkbox to do anything, we need to add a `click` event handler which we will call `completeItem()`. Let's do that now:
+Now, in order for the checkbox to do anything, we need to add a `click` event handler which we will call `completeItem`. Let's do that now:
 
 ```html
   <input type="checkbox" (click)="completeItem()"/>
 ```
 
-When we click on the checkbox, it will run the `completeItem()` method. Let's talk about what this method needs to accomplish. We want to be able to toggle some CSS styling on the todo title so that when the checkbox is checked, it will have a line through it, and no strikethrough line when unchecked. In order to achieve this, we will toggle a variable to be either true or false to represent checked or unchecked states. Add the following code to the `ItemComponent` class:
+When we click on the checkbox, it will run the `completeItem` method. Let's talk about what this method needs to accomplish. We want to be able to toggle some CSS styling on the todo title so that when the checkbox is checked, it will have a line through it, and no strikethrough line when unchecked. In order to achieve this, we will toggle a variable to be either true or false to represent checked or unchecked states. Add the following code to the `ItemComponent` class:
 
 ```ts
 isComplete: boolean = false;
@@ -37,7 +37,7 @@ But wait! How is any of this going to affect the todo title when we're only touc
 <some-element [ngClass]="{'first': true, 'second': true, 'third': false}">...</some-element>
 ```
 
-The 'first' and 'second' class will be applied to the element because they are given a true value, whereas the 'third' class will not be applied because it is given a false value. So this is where our earlier code comes into play. Our `completeItem()` method will toggle between true and false values, thus dictating whether a class should be applied or removed.
+The 'first' and 'second' class will be applied to the element because they are given a true value, whereas the 'third' class will not be applied because it is given a false value. So this is where our earlier code comes into play. Our `completeItem` method will toggle between true and false values, thus dictating whether a class should be applied or removed.
 
 Let's add this NgClass directive to our todo title now:
 

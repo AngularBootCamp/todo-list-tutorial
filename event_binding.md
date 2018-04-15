@@ -60,7 +60,7 @@ Now when the user types in the input box, the title is changed to "Button Clicke
 
 ### The $event object
 
-Now we just react when the `keyup` event occurs. Angular allows us to get the event object itself. It is passed to the event binding as `$event` - so we can use it when we call `changeTitle()`.
+Now we just react when the `keyup` event occurs. Angular allows us to get the event object itself. It is passed to the event binding as `$event` - so we can use it when we call `changeTitle`.
 
 The event object emitted on `keyup` events has a reference to the element that emitted the event - the `input` element. The reference is kept in the event `target` property. As we've seen before, the `input` element has a `value` property which holds the current string that's in the input box. We can pass `$event.target.value` to the method:
 

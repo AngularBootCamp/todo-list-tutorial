@@ -71,7 +71,7 @@ ngOnInit() {
 The expressions that we can bind to in the template are not limited to class properties. They can be a method call or almost any other valid Angular template expression.
 
 For example, let's bind the input value to a method call that returns a value.
-First, let's add the method `generateTitle()` anywhere inside the class, but not inside any of its methods. The best practice is to have our custom methods under the lifecycle methods (`ngOnInit`, in this case).
+First, let's add the method `generateTitle` anywhere inside the class, but not inside any of its methods. The best practice is to have our custom methods under the lifecycle methods (`ngOnInit`, in this case).
 
 ```ts
 generateTitle(): string {
