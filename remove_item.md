@@ -1,57 +1,65 @@
 # Remove item
 
-The user should be able to remove any item, whether it's still active or completed. Revoving an item will be done by clicking a button, aptly named "remove". In this tutorial, we'll learn how to add this functionality to our project.
+The user should be able to remove any item, whether it's still active or completed. Removing an item will be done by clicking a button, aptly named "remove". In this chapter, we'll learn how to add this functionality to our project.
 
-### File: item.component.ts
-First, we need to add the button to the item, so we'll work on the file *item.component.ts*.
+## Add the "remove" button
 
-(a) Add a **(click)** event to the **remove** button in the item template:
-```
+First, we need to add the button to the item, so we'll work on the file `item.component.ts`.
+
+Add a "remove" button to the item template, with a `click` event handler that calls a `removeItem()` method (which we'll create in a moment):
+
+```html
 <button (click)="removeItem()">
   remove
 </button>
 ```
 
-(b) Add a new output to the ItemComponent class, which will be emitted to the list manager when a user pressed the remove button for a specific item:
-```
+Add a new output to the `ItemComponent` class, which will be emitted to the list manager when a user presses the remove button for a specific item:
+
+```javascript
 @Output() remove:EventEmitter<any> = new EventEmitter();
 ```
 
-Make sure that we import both EventEmitter and Output in our class:
-```
+Make sure to import both `EventEmitter` and `Output`:
+
+```javascript
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 ```
-(c) Add a function to the ItemComponent class that will actually emit the event. This function will be called when the user clicks the **remove** button:
-```
+
+Add a method to the `ItemComponent` class to actually emit the event. This method will be called when the user clicks the "remove" button:
+
+```javascript
 removeItem() {
   this.remove.emit(this.todoItem);
 }
 ```
 
-### File: list-manager.component.ts
+## Remove the todo item
 
-Now that each todo item can emit its own removal, let's make sure that the list manager actually removes that same item from the list. For that, we'll work on the file *list-manager.component.ts*.
+Now that each todo item can emit its own removal, let's make sure that the list manager actually removes that same item from the list. For that, we'll work on the file `list-manager.component.ts`.
 
-(a) We need to respond to **remove** event - let's add it to the template, inside the `<todo-item>` tag:
-```
-(remove)="removeItem($event)"
+We need to respond to the `remove` event. Let's add it to the template, inside the `<todo-item>` tag:
+
+```javascript
+<todo-item [todoItem]="item" (remove)="removeItem($event)"></todo-item>
 ```
 
-(b) Now we just need to add the function *removeItem()* to the ListManagerComponent class:
-```
+Now we just need to add the method `removeItem()` to the `ListManagerComponent` class:
+
+```javascript
 removeItem(item) {
   this.todoList = this.todoListService.removeItem(item);
 }
 ```
 
-### File: todo-list.service.ts
+## Remove the todo item from local storage
 
-Removing the item is handled in the service - open *todo-list.service.ts* and add a function called removeItem() to the TodoListService class:
+Removing the item is handled in the service. Open `todo-list.service.ts` and add a function called `removeItem()` to the `TodoListService` class:
 
-```
+```javascript
 removeItem(item) {
   return this.storage.destroy(item);
 }
 ```
 
-This function calls the destroy() method we already created in  todo-list-storage.service.ts earlier.
+This function calls the `destroy()` method we already created in `todo-list-storage.service.ts` earlier.
