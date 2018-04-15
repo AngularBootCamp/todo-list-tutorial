@@ -17,7 +17,7 @@ Let's take a look at the component that was created by the Angular CLI. All the 
 
 Just like ngModules that we saw in the previous chapter, a component is also defined by a class with a decorator. This is the class definition:
 
-```js
+```ts
 export class AppComponent {
   title = 'todo';
 }
@@ -49,7 +49,7 @@ This is one way that you can bind members of the component's controller to its t
 
 Let's go back to the file `app.component.ts` and look at the component's meta-data defined in the decorator `@Component` right above the class definition:
 
-```js
+```ts
 @Component({
   selector: 'todo-root',
   templateUrl: './app.component.html',
@@ -86,13 +86,13 @@ One last thing, the first line in the component file imports the code that defin
 Let's move the template to be **inline** in the component definition. This will help us manage the template while looking at its functionality.
 In the file `app.component.ts` replace the line
 
-```js
+```ts
 templateUrl: './app.component.html',
 ```
 
 with
 
-```js
+```ts
 template: ``,
 ```
 
@@ -102,7 +102,7 @@ Make sure you replace `templateUrl` with `template`, and don't forget the comma 
 
 Now copy the entire template from `app.component.html` and paste it between the backticks.  We'll reformat the code a bit to have it easier on the eye:
 
-```js
+```ts
 template: `
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">

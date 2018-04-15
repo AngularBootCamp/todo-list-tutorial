@@ -16,19 +16,19 @@ Add a "remove" button to the item template, with a `click` event handler that ca
 
 Add a new output to the `ItemComponent` class, which will be emitted to the list manager when a user presses the remove button for a specific item:
 
-```javascript
+```ts
 @Output() remove:EventEmitter<any> = new EventEmitter();
 ```
 
 Make sure to import both `EventEmitter` and `Output`:
 
-```javascript
+```ts
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 ```
 
 Add a method to the `ItemComponent` class to actually emit the event. This method will be called when the user clicks the "remove" button:
 
-```javascript
+```ts
 removeItem() {
   this.remove.emit(this.todoItem);
 }
@@ -40,13 +40,13 @@ Now that each todo item can emit its own removal, let's make sure that the list 
 
 We need to respond to the `remove` event. Let's add it to the template, inside the `<todo-item>` tag:
 
-```javascript
+```html
 <todo-item [todoItem]="item" (remove)="removeItem($event)"></todo-item>
 ```
 
 Now we just need to add the method `removeItem()` to the `ListManagerComponent` class:
 
-```javascript
+```ts
 removeItem(item) {
   this.todoList = this.todoListService.removeItem(item);
 }
@@ -56,7 +56,7 @@ removeItem(item) {
 
 Removing the item is handled in the service. Open `todo-list.service.ts` and add a method called `removeItem()` to the `TodoListService` class:
 
-```javascript
+```ts
 removeItem(item) {
   return this.storage.destroy(item);
 }

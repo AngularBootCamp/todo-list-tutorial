@@ -6,7 +6,7 @@ Let's make the input control text reflect the value of the `title` property.
 
 This is how our input component looks now:
 
-```javascript
+```ts
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -96,7 +96,7 @@ So for now, we have our input control show the title of our todo in it. We now w
 
 Using regular JavaScript, we can insert the value to the input via its properties. We'll fetch the element from the DOM and assign the value of the member `title` to the element's `value` property.
 
-```javascript
+```ts
 let inputElement = document.getElementById('#my-input');
 inputElement.value = this.title;
 ```

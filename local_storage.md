@@ -17,7 +17,7 @@ That means that we can call all available methods in this interface by simply us
 
 Local storage stores data as keys and values, and the interface is quite simple. It has two main methods: `getItem` and `setItem`. Here's an example of using them:
 
-```javascript
+```ts
 localStorage.setItem('name', 'Mor');
 
 let name = localStorage.getItem('name');
@@ -43,7 +43,7 @@ ng g s todo-list-storage
 
 The new file, `todo-list-storage.service.ts`, will be created with the following code:
 
-```javascript
+```ts
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -58,31 +58,31 @@ export class TodoListStorageService {
 
 We need to provide the service in our ngModule. Open `app.module.ts` and add the new class to the `providers` list:
 
-```javascript
+```ts
 providers: [TodoListService, TodoListStorageService],
 ```
 
 Make sure the class is also imported into the file:
 
-```javascript
+```ts
 import { TodoListStorageService } from './todo-list-storage.service';
 ```
 
 Lets start by adding a private property to our service `todoList` which will hold the list items.
 
-```javascript
+```ts
 private todoList;
 ```
 
 In addition, let's add a constant that will store the name of the key we want to use for our local storage, add it right after the imports:
 
-```javascript
+```ts
 const storageName = 'aah_todo_list';
 ```
 
 Now we want to initialize this property with data, by retrieving it from `localStorage`, so within the constructor, add:
 
-```javascript
+```ts
 constructor() {
   this.todoList = JSON.parse(localStorage.getItem(storageName));
 }
@@ -95,7 +95,7 @@ So, if we want to have a real object to work with, we must parse the string into
 Now let's start doing some real stuff, but first we will declare all the public methods we want to expose in this service, which are **get, post, put**, and **destroy**.
 Our service should now look similar to:
 
-```javascript
+```ts
 import { Injectable } from '@angular/core';
 
 const storageName = 'aah_todo_list';
@@ -130,7 +130,7 @@ We will now implement them one by one.
 
 This method will simply return the current state of items stored in the service:
 
-```javascript
+```ts
 /**
    * get items
    * @returns {any[]}
@@ -147,7 +147,7 @@ If you are not familiar with the `...` operator, please refer to [this documenta
 This method will be responsible for adding a new item, and returning the new list.
 It accepts one parameter, `item`, which will be the item to add:
 
-```javascript
+```ts
 /**
    * Add a new todo item
    * @param item
@@ -164,7 +164,7 @@ But what about the local storage? We must also synchronize it with the new array
 
 Lets add a new **private** method in our service, which will be used internally to update the stored list:
 
-```javascript
+```ts
 /**
    * Synchronize the local storage with the current list
    * @returns {any[]}
@@ -182,7 +182,7 @@ After we update the value, we simply return the new list using the `get` method 
 
 Now we need to modify our `post` method to use `update` so everything is synchronized in harmony:
 
-```javascript
+```ts
 /**
    * Add a new todo item
    * @param item
@@ -199,7 +199,7 @@ Now we need to modify our `post` method to use `update` so everything is synchro
 Here we want to update an existing item.
 Before that, let's add another private helper method `findItemIndex`, which will simply return the index of an item within the list array:
 
-```javascript
+```ts
 /**
    * find the index of an item in the array
    * @param item
@@ -212,7 +212,7 @@ Before that, let's add another private helper method `findItemIndex`, which will
 
 Now, we can use `Object.assign` to update an existing item:
 
-```javascript
+```ts
 /**
    * Update an existing item
    * @param item
@@ -235,7 +235,7 @@ At the end, we want to synchronize the local storage \(`this.update`\) and retur
 
 This method will remove an item from the list and then synchronize with local storage:
 
-```javascript
+```ts
 /**
    * Remove an item from the list
    * @param item
@@ -255,7 +255,7 @@ In our code, we first find the index of the item to remove, and remove only it \
 Let's assume we want our todo list to always have some default data to start with.
 We can add it by modifying our service, by adding in the constants section \(after the imports\):
 
-```javascript
+```ts
 const defaultList = [
   { title: 'install NodeJS' },
   { title: 'install Angular CLI' },
@@ -268,7 +268,7 @@ const defaultList = [
 
 And then modify our constructor:
 
-```javascript
+```ts
 constructor() {
   this.todoList = JSON.parse(localStorage.getItem(storageName)) || defaultList;
 }
@@ -284,13 +284,13 @@ Now for our app to use the new local storage service, let's open up `todo-list.s
 
 First we need to import the new service:
 
-```javascript
+```ts
 import { TodoListStorageService } from './todo-list-storage.service';
 ```
 
 Then, we need to inject it in the constructor so we will have an instance to work with:
 
-```javascript
+```ts
 constructor(private storage:TodoListStorageService) {
 }
 ```
@@ -301,7 +301,7 @@ Let's also modify the current methods:
 
 **Before**
 
-```javascript
+```ts
 getTodoList() {
   return this.todoList;
 }
@@ -313,7 +313,7 @@ addItem(item) {
 
 **After**
 
-```javascript
+```ts
 getTodoList() {
   return this.storage.get();
 }
@@ -325,7 +325,7 @@ addItem(item) {
 
 Now we have one last modification to make. Open up `list-manager.component.ts` and modify the `addItem` method this way:
 
-```javascript
+```ts
 addItem(title:string) {
   this.todoList = this.todoListService.addItem({ item:title });
 }

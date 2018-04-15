@@ -23,7 +23,7 @@ Now, in order for the checkbox to do anything, we need to add a `click` event ha
 
 When we click on the checkbox, it will run the `completeItem()` method. Let's talk about what this method needs to accomplish. We want to be able to toggle some CSS styling on the todo title so that when the checkbox is checked, it will have a line through it, and no strikethrough line when unchecked. In order to achieve this, we will toggle a variable to be either true or false to represent checked or unchecked states. Add the following code to the `ItemComponent` class:
 
-```javascript
+```ts
 isComplete: boolean = false;
 
 completeItem() {
