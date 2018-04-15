@@ -80,6 +80,7 @@ generateTitle(): string {
 ```
 
 Replace one or both of the bindings of the title in the template with the method call (don't forget the parentheses!):
+
 ```html
   <input [value]="generateTitle()">
 

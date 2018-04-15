@@ -26,7 +26,7 @@ alert('Hello ' + name + '!');
 
 Another useful method is `clear`. It's used to clear all the data from local storage:
 
-```
+```ts
 localStorage.clear();
 ```
 

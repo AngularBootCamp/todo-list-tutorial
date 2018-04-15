@@ -4,7 +4,7 @@ In this chapter, we will write a whole new component. It will allow us to add an
 
 We'll use the Angular CLI to generate all the needed files and boilerplate for us. Run the following command in a new terminal:
 
-```cmd
+```
 ng g c input -it
 ```
 

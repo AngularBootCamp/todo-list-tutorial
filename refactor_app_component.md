@@ -11,7 +11,7 @@ ng g c list-manager -it
 * Move all the code from `AppComponent` to `ListManagerComponent`
 * Call the new component from the `AppComponent` template:
 
-```
+```html
   template: `
     <todo-list-manager></todo-list-manager>
   `,

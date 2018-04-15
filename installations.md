@@ -56,14 +56,17 @@ NPM allows you to easily download and install different libraries from the inter
 Download NodeJS [here](https://nodejs.org/en/).
 
 If you already have NodeJS installed, make sure you check that the version is 6.9.0 or above by running this in your command line / terminal:
+
 ```
 node -v
 ```
+
 \('-v' stands for 'version'.\)
 
 If it's lower than required, download the new version from the website and install it.
 
 Once installed, you should also have NPM installed. Check its version by running:
+
 ```
 npm -v
 ```
@@ -72,6 +75,7 @@ npm -v
 ### Angular CLI
 
 The [Angular CLI](https://github.com/angular/angular-cli) is a powerful tool that simplifies a lot of the development process. It also installs libraries you'll use in your current and future projects. Install it by running:
+
 ```
 npm i -g @angular/cli
 ```
@@ -85,25 +89,32 @@ Read more about the Angular CLI in the following section.
 ### Creating a Project
 
 First, create a folder to store all your projects, for example _myProjects_, and then use the terminal (command line window) to go into the folder:
+
 ```
 cd the-path-to-your-folder/myProjects
 ```
 
 Now use the Angular CLI to create a new project called _todo-list_ inside your projects folder, by running the following command:
+
 ```
 ng new todo-list --prefix=todo
 ```
+
 This can take a while, since many packages are being downloaded and installed.
 The prefix 'todo' will be used in every component we create. The default prefix (if you don't use the flag `--prefix`) is 'app'.
 
 Now enter the new folder that the Angular CLI created for this project:
+
 ```
 cd todo-list
 ```
+
 Once inside the folder of the application, run the application by using the following command:
+
 ```
 ng serve -o
 ```
+
 The flag `-o` is a short for `--open`, which will open your browser with the right URL: [`localhost:4200`](http://localhost:4200)
 
 You should see a page like this:

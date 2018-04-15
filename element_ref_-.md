@@ -70,6 +70,7 @@ Just like we did in the previous chapter, when we logged `$event`, you can do th
   Save
 </button>
 ```
+
 ```ts
 changeTitle(inputElementReference): void {
   console.log(inputElementReference);
