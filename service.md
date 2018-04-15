@@ -14,13 +14,13 @@ This command will generate the service and put it under `src/app/todo-list.servi
 
 ## Make the service a provider
 
-To start using the service, we first need to *provide* it in an NgModule. Start by adding this code in `/src/app/app.module.ts`:
+To start using the service, we first need to *provide* it in an ngModule. Start by adding this code in `/src/app/app.module.ts`:
 
 ```javascript
 import { TodoListService } from './todo-list.service';
 ```
 
-Next, add the service to the `providers` array, so that the NgModule looks like this:
+Next, add the service to the `providers` array, so that the ngModule looks like this:
 
 ```javascript
 @NgModule({

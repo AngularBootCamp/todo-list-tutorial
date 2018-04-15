@@ -23,11 +23,11 @@ export class AppModule { }
 
 `export` is a reserved word in JavaScript which says that whatever is defined after it should be exposed to other files that import this one using the `import` statement. You can see examples of classes imported from other files at the top of this file.
 
-The class `AppModule` is empty. It will get its functionality from Angular, which will identify its role by the code preceding this line, starting with `@ngModule({`.
+The class `AppModule` is empty. It will get its functionality from Angular, which will identify its role by the code preceding this line, starting with `@NgModule({`.
 
 Every entity in Angular (ngModules, components, services, directives, and pipes) is just a **class with a decorator**. The decorator tells Angular the role of this class.
 
-`@ngModule({...})` is a decorator. A decorator is just a function. When using it, we put `@` before its name. This way it becomes a decorator: it looks at what is written right after the function call and receives it as an argument. Decorators usually do something with what they decorate. In this case, for example, `ngModule` receives the `AppModule` class and adds methods and members to it that later on will be used by Angular. This way, Angular will recognize that this class represents an ngModule.
+`@NgModule({...})` is a decorator. A decorator is just a function. When using it, we put `@` before its name. This way it becomes a decorator: it looks at what is written right after the function call and receives it as an argument. Decorators usually do something with what they decorate. In this case, for example, `NgModule` receives the `AppModule` class and adds methods and members to it that later on will be used by Angular. This way, Angular will recognize that this class represents an ngModule.
 
 What we pass into the decorator function is used by Angular to decorate the class. You can see we pass an object with members; each member is a list of other classes. We'll explain shortly what each member represents.
 
