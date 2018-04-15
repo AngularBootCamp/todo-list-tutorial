@@ -1,55 +1,64 @@
- # Deploy your App to Github Pages
-To deploy our changes to Github pages we will use the angular-cli-ghpages package
-https://github.com/angular-buch/angular-cli-ghpages 
+# Deploy your App to GitHub Pages
 
-* You need to have a Github user
-* You need to create a repostiroy for your project.
-* You need to commit all the changes you made in the project
-* You need to install angular-cli-ghpages
+To deploy our changes to GitHub pages we will use the `angular-cli-ghpages` package: <https://github.com/angular-buch/angular-cli-ghpages>
 
-## Creating a Github user
-If you already have a Github user you can skip this step.
-To Create a Github user go to Github: https://github.com/
-Fill the regetration form and make sure to validate your email address.
+* You need to have a GitHub user account.
+* You need to create a repository for your project.
+* You need to commit all the changes you made in the project.
+* You need to install `angular-cli-ghpages`.
 
-## Create your App repository
-After logging in to Github.
-Click on the `Start a project` button, and name the repository `ng-girls-todo` or any other name you like.
+## Creating a GitHub account
+
+(If you already have a GitHub account you can skip this step.)
+
+To create a GitHub user go to GitHub: <https://github.com/>
+
+Complete the registration form and make sure to validate your email address.
+
+## Creating your App repository
+
+After logging in to GitHub, click on the `Start a project` button, and name the repository `ng-girls-todo` (or any other name you like).
 
 ## Connecting your repository
 
-Commit all your changes by runing this command in your project directory.
+Commit all your changes by running these commands in your project directory:
+
 ```
-git add -A && git commit -m "Your Message"
+git add -A
+git commit -m "Your Message"
 ```
 
-Run the following command to connect your code to your repository.
-make sure to replace the {YOUR_USERNAME} and {YOUR_REPO} with your github username and repository name.
+Run the following commands to connect your code to your repository.
+Make sure to replace `{YOUR_USERNAME}`, `{YOUR_REPO}`, etc., with your GitHub username, repository name, etc.
+
 ```
 git remote add origin https://github.com/{YOUR_USERNAME}/{YOUR_REPO}.git
 git push -u origin master
 ```
 
-## Deploying to Github Pages
-First install angular-cli-ghpages.
+## Deploying to GitHub Pages
+
+First install `angular-cli-ghpages`:
 
 ```
 npm i -g angular-cli-ghpages
 ```
 
-Then simply run:
+Then run these commands:
 
 ```
-ng build --prod --base-href="/[your-repo-name]/"
+ng build --prod --base-href="/{YOUR_REPO}/"
 angular-cli-ghpages
 ```
 
-Your app will be available at https://[your-GH-username].github.io/[repo-name]
+Your app will be available at <https://{YOUR_USERNAME}.github.io/{YOUR_REPO}>.
 
-For more information see https://github.com/angular-buch/angular-cli-ghpages.
+For more information, see <https://github.com/angular-schule/angular-cli-ghpages>.
 
 ## Known Issues
-On (windows) machines you  probably run into an issue like the following:
+
+On Windows machines, you may run into an issue like the following:
+
 ```
 An error occurred!
  Error: Unspecified error (run without silent option for detail)
@@ -58,17 +67,19 @@ An error occurred!
     ...
 ```
 
-Try to debug it with ``` angular-cli-ghpages -S ``` . If you get the following error:
+Try to debug it with `angular-cli-ghpages -S`. If you get the following error:
+
 ```
 fatal: could not read Username for \'https://github.com\': No error\n',
 ```
 
-you can do the following
+You can do the following:
 
-1. Create a Personal Access Token here: https://github.com/settings/tokens
+1. Create a Personal Access Token here: <https://github.com/settings/tokens>
 
-2. Run the following command and replace your token, organisation (your user), repository, username and email:
+2. Run the following command with your token, username, repository, displayed username, and email address:
+
 ```
-angular-cli-ghpages --repo=https://<personal-access-token>@github.com/organisation/your-repo.git --name="Displayed Username" --email=mail@example.org
+angular-cli-ghpages --repo=https://{YOUR_PERSONAL_ACCESS_TOKEN}@github.com/{YOUR_USERNAME}/{YOUR_REPO}.git --name="Displayed Username" --email={YOUR_EMAIL_ADDRESS}
 ```
 
