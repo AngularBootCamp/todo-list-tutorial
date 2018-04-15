@@ -180,7 +180,7 @@ Let's explain.
 Here we use the simple method of `setItem`, which takes a key \(the first argument\) and a string value \(the second argument\) and stores it in local storage.
 After we update the value, we simply return the new list using the `get` method we implemented earlier.
 
-Now we need to modify our `post` function to use `update` so everything is synchronized in harmony:
+Now we need to modify our `post` method to use `update` so everything is synchronized in harmony:
 
 ```javascript
 /**

@@ -54,7 +54,7 @@ removeItem(item) {
 
 ## Remove the todo item from local storage
 
-Removing the item is handled in the service. Open `todo-list.service.ts` and add a function called `removeItem()` to the `TodoListService` class:
+Removing the item is handled in the service. Open `todo-list.service.ts` and add a method called `removeItem()` to the `TodoListService` class:
 
 ```javascript
 removeItem(item) {
@@ -62,4 +62,4 @@ removeItem(item) {
 }
 ```
 
-This function calls the `destroy()` method we already created in `todo-list-storage.service.ts` earlier.
+This method calls the `destroy()` method we already created in `todo-list-storage.service.ts` earlier.
