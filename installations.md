@@ -59,11 +59,11 @@ If you already have NodeJS installed, make sure you check that the version is 6.
 ```
 node -v
 ```
-\('-v' stands for 'version'.\)  
+\('-v' stands for 'version'.\)
 
 If it's lower than required, download the new version from the website and install it.
 
-Once installed, you should also have NPM installed. Check its version by running:  
+Once installed, you should also have NPM installed. Check its version by running:
 ```
 npm -v
 ```

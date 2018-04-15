@@ -7,26 +7,26 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'todo-input',
-  template: `                           
-    <input [value]="title"              
+  template: `
+    <input [value]="title"
            (keyup.enter)="changeTitle($event.target.value)">
     <button (click)="changeTitle('Button Clicked!')">
       Save
     </button>
     <p>The title is: {{ title }}</p>
-  `,  
-  styleUrls: ['./input.component.css']  
-})    
+  `,
+  styleUrls: ['./input.component.css']
+})
 export class InputComponent implements OnInit {
-  title: string = '';           
+  title: string = '';
 
-  constructor() { }                     
+  constructor() { }
 
   ngOnInit() {
   }
 
   changeTitle(newTitle: string): void {
-    this.title = newTitle;              
+    this.title = newTitle;
   }
 }
 ```
@@ -38,7 +38,7 @@ We already know how to create a button and react to clicking on it. We now need 
 Angular helps us do exactly that. **We can store a reference to the element we want in a variable with the name we choose, for example `inputElement`, using a simple syntax - a hash.** Add `#inputElement` to the `input` element, and use it in the `click` event of the button:
 
 ```html
-<input [value]="title"              
+<input [value]="title"
        (keyup.enter)="changeTitle($event.target.value)"
        #inputElement>
 
@@ -62,7 +62,7 @@ Next, we'll build the list of todo items.
 Just like we did in the previous chapter, when we logged `$event`, you can do the same with `#inputElement`. Change the method `changeTitle` so it will receive the whole element reference and log it to the console:
 
 ```html
-<input [value]="title"              
+<input [value]="title"
        (keyup.enter)="changeTitle(inputElement)"
        #inputElement>
 
@@ -73,7 +73,7 @@ Just like we did in the previous chapter, when we logged `$event`, you can do th
 ```ts
 changeTitle(inputElementReference): void {
   console.log(inputElementReference);
-  this.title = inputElementReference.value;              
+  this.title = inputElementReference.value;
 }
 
 ```

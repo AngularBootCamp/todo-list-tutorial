@@ -2,7 +2,7 @@
 
 We want to add items to our list. With Angular, we can do this easily and see the item added immediately. We will do this from within the `InputComponent` we created before. We'll change it so when hitting the Enter key or clicking the submit button, the value of the input box will become the title of the new item, and the new item will be added to the list.
 
-But we don't want the `todo-input` component to be responsible for adding a new item to the list. We want it to have minimal responsibility, and **delegate the action to its parent component**. One of the advantages of this approach is that this component will be reusable, and can be attached to a different action in different situations. 
+But we don't want the `todo-input` component to be responsible for adding a new item to the list. We want it to have minimal responsibility, and **delegate the action to its parent component**. One of the advantages of this approach is that this component will be reusable, and can be attached to a different action in different situations.
 
 For example, in our case, we'll be able to use the `InputComponent` inside the `ItemComponent`. Then we'll have an input box for each item and we'll be able to edit the item's title. In this case, pressing the Enter key or the Save button will have a different effect.
 
@@ -16,7 +16,7 @@ Add the following line inside the `InputComponent` class, which defines an outpu
 @Output() submit: EventEmitter<string> = new EventEmitter();
 ```
 
-The output property is called `submit`. Make sure that `Output` and `EventEmitter` are added to the import declaration in the first line of the file: 
+The output property is called `submit`. Make sure that `Output` and `EventEmitter` are added to the import declaration in the first line of the file:
 
 ```ts
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
@@ -45,7 +45,7 @@ Now all we need to do is catch the event in the parent component and attach logi
 Now all that's left is to implement the `addItem` method, which receives a string and adds it to the list:
 
 ```ts
-addItem(title: string): void {    
+addItem(title: string): void {
   this.todoList.push({ title });
 }
 ```

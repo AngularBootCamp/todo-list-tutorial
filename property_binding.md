@@ -59,13 +59,13 @@ To show this, let's change the value of the title after a few seconds and see wh
 ```ts
 ngOnInit() {
   setTimeout(() => {
-    this.title = 'This is not the title you are looking for';  
+    this.title = 'This is not the title you are looking for';
   }, 3000);
 }
 ```
 
 `setTimeout` is a JavaScript function. Its first parameter is what we want to happen - a function of our choice. The second parameter is how much we want to delay it, in milliseconds. In this example, we pass an inline anonymous function which sets the value of `this.title`. For this we use one of the new features in JavaScript ES6: an **arrow function**.
- 
+
 ## Binding to Methods
 
 The expressions that we can bind to in the template are not limited to class properties. They can be a method call or almost any other valid Angular template expression.
@@ -80,9 +80,9 @@ generateTitle(): string {
 ```
 
 Replace one or both of the bindings of the title in the template with the method call (don't forget the parentheses!):
-```html                    
+```html
   <input [value]="generateTitle()">
-  
+
   {{ generateTitle() }}
 ```
 
@@ -109,6 +109,6 @@ In JavaScript, we find the `input` element in the DOM by its id, and then set it
 
 Excellent.
 
-However, **this is highly discouraged in Angular. You should never access the DOM directly!**  
+However, **this is highly discouraged in Angular. You should never access the DOM directly!**
 That's because you can assign different renderers to Angular and run the application on different platforms. They may be mobile, desktop, or even a robot. And they will not have a `document` object from which you can manipulate the result!
 

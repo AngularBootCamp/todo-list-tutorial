@@ -66,7 +66,7 @@ Try setting a different value for `title` from inside the constructor. See the r
 ```ts
 title: string = 'my title';
 
-constructor() { 
+constructor() {
   this.title = 'Hello World';
 }
 ```
@@ -95,7 +95,7 @@ changeTitle(newTitle: string): string {
 This method is not used anywhere. We can call it from another method or from the template \(which we will see in the following chapters\). Let's call it from the constructor.
 
 ```ts
-constructor() { 
+constructor() {
   this.changeTitle('I love Angular');
 }
 ```
@@ -107,7 +107,7 @@ constructor() {
 You can always use `console.log(someValue)` inside class methods. Then the value you passed as an argument will be printed in the browser's console. This way you can see the order of the execution of the methods and the value of the argument you pass \(if it's a variable\). For example:
 
 ```ts
-constructor() { 
+constructor() {
   console.log('in constructor');
   this.changeTitle('I love Angular');
   console.log(this.title);

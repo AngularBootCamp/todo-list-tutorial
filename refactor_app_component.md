@@ -2,7 +2,7 @@
 
 We're going to perform a small refactoring. The `todo-root` shouldn't have such a large template and all this logic. It should just call another component that will deal with that.
 
-* Create a new component called `list-manager`: 
+* Create a new component called `list-manager`:
 
 ```
 ng g c list-manager -it

@@ -84,7 +84,7 @@ Now we want to initialize this property with data, by retrieving it from `localS
 
 ```javascript
 constructor() {
-  this.todoList = JSON.parse(localStorage.getItem(storageName));  
+  this.todoList = JSON.parse(localStorage.getItem(storageName));
 }
 ```
 
