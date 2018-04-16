@@ -9,7 +9,7 @@ Open the file `index.html`. The content that is rendered in the browser's window
 
 Angular can be defined in many ways. One of them is JavaScript code which runs when the application is presented in the browser. All the code you will write - components, modules, services, etc. - will be recognized by Angular. Angular will perform actions accordingly. For example, components you will write and use will be compiled to JavaScript functions. These functions insert the component content into the DOM - the Document Object Model - which the browser uses to show the application. That's how you'll see the component you created on the screen.
 
-So `<todo-root>` is not an HTML element, it is an Angular Component. When the application is ready, the content of the component is inserted in place of the `<todo-root>` tag.
+So `<todo-root>` is not an HTML element, it is an Angular Component. When the application is ready, the content of the component is inserted inside the `<todo-root>` tag.
 
 The `<todo-root>` tag starts off empty. Everything inside the tag will be rendered by the browser after Angular compiles the application. When Angular is done, the tag will no longer be empty. Instead, you will see the `<todo-root>` component and its content, which starts with "**Welcome to todo!**".
 
