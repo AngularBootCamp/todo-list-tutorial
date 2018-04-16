@@ -129,3 +129,5 @@ You can open another terminal to perform tasks in parallel.
 To stop the app from running, press `Ctrl+C` in the terminal, or close the terminal.
 
 Now we're ready to start developing!
+
+[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-01_Installations)
