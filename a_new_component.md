@@ -23,7 +23,7 @@ ng generate component input --inline-template
 
 > You can avoid using `-it` each time you generate a components by setting inline templates as a default in the configuration file `.angular-cli.json`.
 
-> Don't worry about the component name `input`. It will not replace HTMLs `input` element. That's thanks to the prefix that the Angular CLI gives to our components. The default prefix is `app`, so the component selector would be `app-input`. If you've created the project stating the prefix of your choice, or changed it afterwards in the file `.angular-cli.json`, this will be the prefix of the selector. When we created the project, we set the prefix to "todo", so the selector should be `todo-input`.
+> Don't worry about the component name `input`. It will not replace HTML's `input` element. That's thanks to the prefix that the Angular CLI gives to our components. The default prefix is `app`, so the component selector would be `app-input`. If you've created the project stating the prefix of your choice, or changed it afterwards in the file `.angular-cli.json`, this will be the prefix of the selector. When we created the project, we set the prefix to "todo", so the selector should be `todo-input`.
 
 Let's take a look at what the Angular CLI created for us.
 
@@ -55,11 +55,13 @@ Open the root component file `app.component.ts` and add the `todo-input` tag any
 
 ```ts
 template: `
+  ...
   <h1>
     Welcome to {{title}}!
   </h1>
 
   <todo-input></todo-input>
+  ...
 `,
 ```
 
@@ -77,12 +79,14 @@ It will not interfere with the `todo-root` component's `title`, since each compo
 
 You can give an initial string to the title, like we did in the `todo-root` component.
 
-Next, add an input element, a button, and a binding to the title, to the template:
+Next, replace the default template with an input element, a button, and a binding to the title:
 
-```html
-<input>
-<button>Save</button>
-<p>The title is: {{ title }}</p>
+```ts
+template: `
+  <input>
+  <button>Save</button>
+  <p>The title is: {{ title }}</p>
+`,
 ```
 
 Check out the result!
