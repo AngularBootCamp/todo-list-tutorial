@@ -304,5 +304,5 @@ In this tutorial we learned what local storage is and how to use it.
 We saw that `localStorage` is a great and a pretty straight-forward tool for developers to store data locally on the users' computers/devices.
 We then implemented a new service that uses `localStorage` to store the todo-list items, and updated the rest of the components to support this new service.
 
-Enjoy the rest of the tutorial!
+[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-16_Local_storage)
 
