@@ -47,7 +47,7 @@ In this component, the expression is simply the member of the component class, `
 
 This is one way that you can bind members of the component's controller to its template. How does Angular know that this is the template of the App component?
 
-Let's go back to the file `app.component.ts` and look at the component's meta-data defined in the decorator `@Component` right above the class definition:
+Let's go back to the file `app.component.ts` and look at the component's metadata defined in the decorator `@Component` right above the class definition:
 
 ```ts
 @Component({
