@@ -49,7 +49,7 @@ Another method we didn't see in the `todo-root` component is the constructor. It
 
 The property `title` we added is used to store a value, in our case of type string. Each instance of the class will have its own `title` property, meaning you can change the value of `title` in one instance, but it will remain the same in the other instances.
 
-In TypeScript, we must declare members of the class either in the class body outside any method, or pass them to the constructor - as we will see when we will use services.
+In TypeScript, we must declare members of the class either in the class body outside any method, or pass them to the constructor - as we will see when we use services.
 
 You can declare a property without initializing it:
 
