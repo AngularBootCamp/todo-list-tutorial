@@ -51,17 +51,15 @@ selector: 'todo-input',
 
 We can use this component as-is and see the result!
 
-Open the root component file `app.component.ts` and add the `todo-input` tag anywhere inside the template:
+Open the root component file `app.component.ts` and add the `todo-input` tag inside the template:
 
 ```ts
 template: `
-  ...
   <h1>
     Welcome to {{title}}!
   </h1>
 
   <todo-input></todo-input>
-  ...
 `,
 ```
 
