@@ -69,3 +69,6 @@ removeItem(item) {
 ```
 
 This method calls the `destroy` method we already created in `todo-list-storage.service.ts` earlier.
+
+[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-17_Remove_item)
+
