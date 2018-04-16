@@ -1,10 +1,8 @@
 # Class
 
-## Class Definition
-
 A class is a special programmatic structure. It is defined with **members** which can be **properties** \(variables\) and **methods** \(functions\). Then instances of the class are created, usually by calling the `new` operator on the class: `let myInstance = new myClass();`. The instance created is an object on which you can call the class methods and get and set the values of its properties. Multiple instances can be created from one class.
 
-### In Angular...
+## In Angular...
 
 Angular takes care of creating instances of the classes you define - if they are recognized as Angular building blocks. The decorators make that connection with Angular.
 
@@ -20,7 +18,7 @@ template: `
 
 Let's take a look at the class `InputComponent`.
 
-### implements OnInit
+## implements OnInit
 
 First, you see something was added to the class declaration:
 
@@ -41,13 +39,13 @@ ngOnInit() {
 
 You can use this method without explicitly indicating that the class implements the `OnInit` interface, but it's useful to use the implementation statement. To see why, delete the `ngOnInit` method. The IDE will tell you there's an error - you must implement `ngOnInit`. How does it know that? Because of `implements OnInit`.
 
-### constructor
+## constructor
 
 Another method we didn't see in the `todo-root` component is the constructor. It is a method that is called by JavaScript when an instance of the class is created. Whatever is inside this method is used to create the instance. So it is called before `ngOnInit`.
 
 > A strong feature in Angular that uses the constructor is dependency injection. We'll get to that later on, when we start using services.
 
-### Properties
+## Properties
 
 The property `title` we added is used to store a value, in our case of type string. Each instance of the class will have its own `title` property, meaning you can change the value of `title` in one instance, but it will remain the same in the other instances.
 
@@ -73,7 +71,7 @@ constructor() {
 
 Try changing the value of `title` inside the method `ngOnInit`. Which value will be displayed on the screen?
 
-### Methods
+## Methods
 
 Let's add a method that changes the value of `title` according to the argument we will pass. The method will have one parameter of type `string`. Add the following code inside the class body \(but not inside another method\):
 
@@ -102,7 +100,7 @@ constructor() {
 
 ![](/assets/lab.jpg) **Playground**: You can try calling the method with different arguments \(the string passed inside the brackets\) from `ngOnInit`. Try calling it before or after assigning a value directly to title. Try calling it a few times from the same method. See the result in the browser.
 
-### Debugging Tip
+## Debugging Tip
 
 You can always use `console.log(someValue)` inside class methods. Then the value you passed as an argument will be printed in the browser's console. This way you can see the order of the execution of the methods and the value of the argument you pass \(if it's a variable\). For example:
 

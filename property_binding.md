@@ -93,7 +93,7 @@ So for now, we have our input control show the title of our todo in it. We now w
 
 [Angular Guide - Template Property Binding](https://angular.io/guide/template-syntax#property-binding--property-)
 
-### Note about accessing the DOM
+## A note about accessing the DOM
 
 Using regular JavaScript, we can insert the value to the input via its properties. We'll fetch the element from the DOM and assign the value of the member `title` to the element's `value` property.
 

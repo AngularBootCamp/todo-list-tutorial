@@ -81,7 +81,7 @@ The element `todo-root` is not an HTML element. It is the component that was cre
 
 One last thing, the first line in the component file imports the code that defines the decorator `@Component`. It is needed to use the decorator, which is defined in the imported file \(or actually, in one of its own imports\). Try removing this line, and see the error.
 
-#### Inline Template
+## Inline Template
 
 Let's move the template to be **inline** in the component definition. This will help us manage the template while looking at its functionality.
 In the file `app.component.ts` replace the line
@@ -134,7 +134,7 @@ At this point you can delete the file `app.component.html`.
 
 The same way we use inline template, we can use also inline styles. But for now we will keep the styles in a separate file.
 
-### Summary
+## Summary
 
 We have explored the root component that was generated for us by the Angular CLI, and even refactored it. In the next chapter, we will create a new component. We will start building the tree of components, which defines the structure of the application.
 

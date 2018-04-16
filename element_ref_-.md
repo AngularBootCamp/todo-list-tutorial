@@ -57,7 +57,7 @@ Instead of hunting down the elements via a DOM query \(which is bad practice, as
 
 Next, we'll build the list of todo items.
 
-### Tip - explore the element reference
+## Tip - explore the element reference
 
 Just like we did in the previous chapter, when we logged `$event`, you can do the same with `#inputElement`. Change the method `changeTitle` so it will receive the whole element reference and log it to the console:
 
