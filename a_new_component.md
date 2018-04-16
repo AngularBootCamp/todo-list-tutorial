@@ -35,7 +35,7 @@ It created a new folder called `src/app/input`. There are three files there:
 
 Open the file `input.component.ts`. You can see that the Angular CLI has generated a default template for us:
 
-```typescript
+```ts
   template: `
     <p>
       input Works!
@@ -45,7 +45,7 @@ Open the file `input.component.ts`. You can see that the Angular CLI has generat
 
 It has also added the selector according to the name we gave to the component, with the prefix we configured:
 
-```typescript
+```ts
 selector: 'todo-input',
 ```
 
@@ -53,7 +53,7 @@ We can use this component as-is and see the result!
 
 Open the root component file `app.component.ts` and add the `todo-input` tag anywhere inside the template:
 
-```typescript
+```ts
 template: `
   <h1>
     Welcome to {{title}}!
@@ -67,7 +67,7 @@ Check what's new in the browser!
 
 Get back to our `input.component.ts` and add some content. First, add a `title` member which we will use as the todo item title:
 
-```typescript
+```ts
 export class InputComponent implements OnInit {
   title: string = '';
   ...
