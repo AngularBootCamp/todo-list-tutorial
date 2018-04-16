@@ -85,3 +85,5 @@ Don't forget to put the code back the way it was after you're finished experimen
 
 [Angular Template Reference Variables](https://angular.io/guide/template-syntax#template-reference-variables--var-)
 
+[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-08_Element_ref)
+
