@@ -55,7 +55,7 @@ Angular lets us bind properties to the template easily and conveniently; we saw 
 <input [value]="title">
 ```
 
-You can go on to the next chapter, but if you'd like to learn more about change detection - keep on reading.
+You can go on to the next chapter, but if you'd like to learn more about change detection, keep reading.
 
 ## Change Detection
 
@@ -89,9 +89,9 @@ generateTitle(): string {
 Replace one or both of the bindings of the title in the template with the method call (don't forget the parentheses!):
 
 ```html
-  <input [value]="generateTitle()">
-
-  {{ generateTitle() }}
+<input [value]="generateTitle()">
+<button>Save</button>
+<p>The title is: {{ generateTitle() }}</p>
 ```
 
 So for now, we have our input control show the title of our todo in it. We now want to make the input change the value of the title back by entering a value in it and pressing Enter. How do we do that? Let's go to the next chapter and find out...
@@ -119,4 +119,6 @@ Excellent.
 
 However, **this is highly discouraged in Angular. You should never access the DOM directly!**
 That's because you can assign different renderers to Angular and run the application on different platforms. They may be mobile, desktop, or even a robot. And they will not have a `document` object from which you can manipulate the result!
+
+[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-06_Property_binding)
 
