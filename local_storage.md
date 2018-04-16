@@ -240,7 +240,7 @@ constructor() {
 }
 ```
 
-The above will make sure that if data was not yet stored in `localStorage`, our service will still have some default data to return.
+The above will make sure that if data was not yet stored in `localStorage`, our service will still have some default data to return. This also means you can completely remove the `todoList` array from `TodoListService`, since now the default list is handled here.
 
 ## Almost done!
 
@@ -257,8 +257,7 @@ import { TodoListStorageService } from './todo-list-storage.service';
 Then, we need to inject it in the constructor so we will have an instance to work with:
 
 ```ts
-constructor(private storage:TodoListStorageService) {
-}
+constructor(private storage:TodoListStorageService) { }
 ```
 
 This will let us use `this.storage` across the todo-list service.
@@ -292,8 +291,8 @@ addItem(item) {
 Now we have one last modification to make. Open up `list-manager.component.ts` and modify the `addItem` method this way:
 
 ```ts
-addItem(title:string) {
-  this.todoList = this.todoListService.addItem({ item:title });
+addItem(title): void {
+  this.todoList = this.todoListService.addItem({ title });
 }
 ```
 
