@@ -8,10 +8,16 @@ First, we need to add the button to the item, so we'll work on the file `item.co
 
 Add a "remove" button to the item template, with a `click` event handler that calls a `removeItem` method (which we'll create in a moment):
 
-```html
-<button (click)="removeItem()">
-  remove
-</button>
+```ts
+template: `
+  <div class="todo-item">
+    {{ todoItem.title }}
+
+    <button class="btn btn-red" (click)="removeItem()">
+      remove
+    </button>
+  </div>
+`,
 ```
 
 Add a new output to the `ItemComponent` class, which will be emitted to the list manager when a user presses the remove button for a specific item:
