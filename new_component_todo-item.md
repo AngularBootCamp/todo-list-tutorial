@@ -84,3 +84,5 @@ Now pass the whole item to the renamed property in `AppComponent` (remove the `.
 
 We now have a list of components, and each component received its data from the loop in the parent component. Now we'll see how this list can be dynamic.
 
+[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-10_New_component_todo-item)
+
