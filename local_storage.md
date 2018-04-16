@@ -131,10 +131,6 @@ We will now implement them one by one.
 This method will simply return the current state of items stored in the service:
 
 ```ts
-/**
-   * get items
-   * @returns {any[]}
-   */
   get() {
     return [...this.todoList];
   }
@@ -148,11 +144,6 @@ This method will be responsible for adding a new item, and returning the new lis
 It accepts one parameter, `item`, which will be the item to add:
 
 ```ts
-/**
-   * Add a new todo item
-   * @param item
-   * @returns {any[]}
-   */
   post(item) {
     this.todoList.push(item);
     return this.get();
@@ -165,10 +156,6 @@ But what about the local storage? We must also synchronize it with the new array
 Lets add a new **private** method in our service, which will be used internally to update the stored list:
 
 ```ts
-/**
-   * Synchronize the local storage with the current list
-   * @returns {any[]}
-   */
   private update() {
     localStorage.setItem(storageName, JSON.stringify(this.todoList));
 
@@ -183,11 +170,6 @@ After we update the value, we simply return the new list using the `get` method 
 Now we need to modify our `post` method to use `update` so everything is synchronized in harmony:
 
 ```ts
-/**
-   * Add a new todo item
-   * @param item
-   * @returns {any[]}
-   */
   post(item) {
     this.todoList.push(item);
     return this.update();
@@ -200,11 +182,6 @@ Here we want to update an existing item.
 Before that, let's add another private helper method `findItemIndex`, which will simply return the index of an item within the list array:
 
 ```ts
-/**
-   * find the index of an item in the array
-   * @param item
-   * @returns {number}
-   */
   private findItemIndex(item) {
     return this.todoList.indexOf(item);
   }
@@ -213,12 +190,6 @@ Before that, let's add another private helper method `findItemIndex`, which will
 Now, we can use `Object.assign` to update an existing item:
 
 ```ts
-/**
-   * Update an existing item
-   * @param item
-   * @param changes
-   * @returns {any[]}
-   */
   put(item, changes) {
     Object.assign(this.todoList[this.findItemIndex(item)], changes);
     return this.update();
@@ -236,11 +207,6 @@ At the end, we want to synchronize the local storage \(`this.update`\) and retur
 This method will remove an item from the list and then synchronize with local storage:
 
 ```ts
-/**
-   * Remove an item from the list
-   * @param item
-   * @returns {any[]}
-   */
   destroy(item) {
     this.todoList.splice(this.findItemIndex(item), 1);
     return this.update();
