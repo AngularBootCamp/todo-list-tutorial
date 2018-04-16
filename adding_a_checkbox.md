@@ -9,7 +9,7 @@ We will look at:
 * Editing the todo title so that it responds to the checkbox
 * Adding a new CSS Class
 
-Let's go ahead and add a checkbox into our `item.component.ts` file. Place the following code right before the `<p>` tag containing `{{ todoItem.title }}`:
+Let's go ahead and add a checkbox into our `item.component.ts` file. Place the following code right before `{{ todoItem.title }}`:
 
 ```html
   <input type="checkbox"/>
@@ -18,7 +18,9 @@ Let's go ahead and add a checkbox into our `item.component.ts` file. Place the f
 Now, in order for the checkbox to do anything, we need to add a `click` event handler which we will call `completeItem`. Let's do that now:
 
 ```html
-  <input type="checkbox" (click)="completeItem()"/>
+  <input type="checkbox"
+          class="todo-checkbox"
+          (click)="completeItem()">
 ```
 
 When we click on the checkbox, it will run the `completeItem` method. Let's talk about what this method needs to accomplish. We want to be able to toggle some CSS styling on the todo title so that when the checkbox is checked, it will have a line through it, and no strikethrough line when unchecked. In order to achieve this, we will toggle a variable to be either true or false to represent checked or unchecked states. Add the following code to the `ItemComponent` class:
@@ -39,12 +41,12 @@ But wait! How is any of this going to affect the todo title when we're only touc
 
 The 'first' and 'second' class will be applied to the element because they are given a true value, whereas the 'third' class will not be applied because it is given a false value. So this is where our earlier code comes into play. Our `completeItem` method will toggle between true and false values, thus dictating whether a class should be applied or removed.
 
-Let's add this NgClass directive to our todo title now:
+Let's wrap the item title in a `<span>`, then use NgClass to apply the styling:
 
 ```html
-<p class="todo-title" [ngClass]="{'todo-complete': isComplete}">
+<span class="todo-title" [ngClass]="{'todo-complete': isComplete}">
   {{ todoItem.title }}
-</p>
+</span>
 ```
 
 And finally, add the CSS to our `item.component.css` file:
