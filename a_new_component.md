@@ -93,3 +93,4 @@ Check out the result!
 
 This component doesn't do much at this point. In the following chapters, we will learn about the component class, and then implement the component's logic.
 
+[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-04_A_new_component)
