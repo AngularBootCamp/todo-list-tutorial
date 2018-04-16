@@ -28,7 +28,7 @@
 
 [Service](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-14_Service)
 
-[Add more abilities to service](https://stackblitz.com/github/angularbootcamp/tree/todo-list-tutorial-steps/step-15_Add_more_abilities_to_service)
+[Add more abilities to service](https://stackblitz.com/github/angularbootcamp/tree/todo-list-tutorial-steps/tree/step-15_Add_more_abilities_to_service)
 
 [Local storage](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-16_Local_storage)
 
