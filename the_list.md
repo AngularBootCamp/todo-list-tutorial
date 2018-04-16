@@ -43,3 +43,6 @@ As we saw, the `ngFor` directive modifies the template at runtime by repeating t
 In this example, `userLoggedIn` should be a member of the component, and have a true or false value. If it's true, the `h1` element will be displayed. If false, the element will not exist in the DOM.
 
 There are other directives in Angular which are not structural \(and are used without the `*`\). For example `ngStyle` and `ngClass`, with which you can dynamically apply style and classes to the element.
+
+[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-09_The_list)
+
