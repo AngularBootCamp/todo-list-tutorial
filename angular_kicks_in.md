@@ -55,3 +55,4 @@ We've seen how we tell Angular where and how to start its work, how we define th
 
 In the next chapter, we'll see how a component is defined in Angular.
 
+[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-02_Angular_kicks_in)
