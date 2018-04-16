@@ -8,7 +8,8 @@ We're going to perform a small refactoring. The `todo-root` shouldn't have such 
 ng g c list-manager -it
 ```
 
-* Move all the code from `AppComponent` to `ListManagerComponent`
+* Move the code from `AppComponent` to `ListManagerComponent`. (Be careful not to change the list manager component's class name!)
+
 * Call the new component from the `AppComponent` template:
 
 ```html
