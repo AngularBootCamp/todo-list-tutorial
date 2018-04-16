@@ -57,7 +57,7 @@ Let's go back to the file `app.component.ts` and look at the component's metadat
 })
 ```
 
-We pass an object of definitions to the decorator, just like we saw in the previous chapter with ngModule. The second property, `templateUrl` tells Angular where to look for the template attached to the component. There is another option to point to the template, which we'll discuss later: to write the whole template inline here, in the component definition.
+We pass an object of definitions to the decorator, just like we saw in the previous chapter with ngModule. The second property, `templateUrl`, tells Angular where to look for the template attached to the component. There is another option to point to the template, which we'll discuss later: to write the whole template inline here, in the component definition.
 
 The third property, `styleUrls` tells Angular where to look for the CSS files that define the style of this component. It can have multiple CSS files. That's why the value of `styleUrls` is an array. You can take a look at the CSS file `app.component.css` - you'll see that it's empty. You can add some CSS style here, for example:
 
@@ -79,7 +79,7 @@ The first property, `selector`, tells Angular what will be the name of the tag t
 
 The element `todo-root` is not an HTML element. It is the component that was created with the selector `todo-root`. Try changing the selector. You'll see that if you change it in only one of the files, nothing will be displayed, since the element is no longer replaced with an Angular component. You can see an error message in the browser's console.
 
-One last thing, the first line in the component file imports the code that defines the decorator `@Component`. It is needed to use the decorator, which is defined in the imported file \(or actually, in one of its own imports\). Try removing this line, and see the error.
+One last thing: the first line in the component file imports the code that defines the decorator `@Component`. It is needed to use the decorator, which is defined in the imported file \(or actually, in one of its own imports\). Try removing this line, and see the error.
 
 ## Inline Template
 
@@ -96,7 +96,7 @@ with
 template: ``,
 ```
 
-Notice the **backticks** - they are used to define Template Literals, which are new in JavaSript \(ES6\). This way you can define multi-line strings. They have another cool ability: to easily use JavaScript variables and expressions within the string \(with no relation to Angular binding expressions in the template\). Read about it in the [MDN documentation](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals).
+Notice the **backticks** - they are used to define Template Literals, which are new in JavaScript \(ES6\). This way you can define multi-line strings. They have another cool ability: to easily use JavaScript variables and expressions within the string \(with no relation to Angular binding expressions in the template\). Read about it in the [MDN documentation](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals).
 
 Make sure you replace `templateUrl` with `template`, and don't forget the comma at the end of the line.
 
@@ -132,7 +132,7 @@ At this point you can delete the file `app.component.html`.
 
 > When generating a new project, you can state that you'd like an inline template for the root component by adding the flag `-it` (or `--inline-template`). Keep this in mind for your next project!
 
-The same way we use inline template, we can use also inline styles. But for now we will keep the styles in a separate file.
+The same way we use inline templates, we can use also inline styles. But for now we will keep the styles in a separate file.
 
 ## Summary
 
