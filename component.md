@@ -128,6 +128,15 @@ template: `
 
 It is easier to manage the template when you see its controller at the same time. This is true as long as the template doesn't get too big and the controller doesn't get too complicated. If they do, it's a sign you should refactor your code by breaking it down to child components.
 
+In fact, there's a lot of stuff we don't need in this template, so let's get rid of most of it:
+
+template: `
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+`,
+```
+
 At this point you can delete the file `app.component.html`.
 
 > When generating a new project, you can state that you'd like an inline template for the root component by adding the flag `-it` (or `--inline-template`). Keep this in mind for your next project!
