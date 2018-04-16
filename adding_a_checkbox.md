@@ -58,3 +58,5 @@ And finally, add the CSS to our `item.component.css` file:
 ```
 
 Voila! Checking the checkbox should apply a line through the todo title, and unchecking the checkbox should remove the line.
+
+[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-18_Adding_a_checkbox)
