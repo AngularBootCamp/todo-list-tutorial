@@ -79,6 +79,8 @@ changeTitle(inputElementReference): void {
 
 ```
 
+Don't forget to put the code back the way it was after you're finished experimenting!
+
 ## Resources
 
 [Angular Template Reference Variables](https://angular.io/guide/template-syntax#template-reference-variables--var-)
