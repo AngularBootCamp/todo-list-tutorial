@@ -6,13 +6,15 @@ We still don't have a whole list to show, but at the moment we will use another 
 
 ## The Action
 
-First, let's implement `changeTitle`. You can replace `generateTitle` with this new method. It will receive the new title as its argument:
+First, make sure you've implemented the `changeTitle` method inside the `InputComponent` class. It will receive the new title as its argument:
 
 ```ts
 changeTitle(newTitle: string): void {
   this.title = newTitle;
 }
 ```
+
+(You can also delete the `generateTitle` method, if you created it during the previous chapter.)
 
 ## Binding to Events
 
@@ -36,7 +38,7 @@ Go to the browser and see the result - click on the Save button.
 
 ## Event Data
 
-We pass a static string to the method call: `Button Clicked!'` But we want to pass the value that the user typed in the input box!
+We pass a static string to the method call: `Button Clicked!` But we want to pass the value that the user typed in the input box!
 
 In the next chapter, we will learn how to use properties of one element in another element in the same template. Then we'll be able to complete the implementation of the `click` event of the Save button.
 But now we'll bind a method to an event on the `input` element: when the user presses Enter, the `changeTitle` method will be called.
@@ -105,4 +107,6 @@ changeTitle(event): void {
 Try it out!
 
 Don't forget to change the code back before we go on \(!\).
+
+[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-07_Event_binding)
 
