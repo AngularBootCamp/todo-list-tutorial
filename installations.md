@@ -1,4 +1,4 @@
-# Installation
+# Installations
 
 Every developer needs a set of tools and libraries to start working. In our case, we'll install all the necessary tools, and once we have the Angular CLI installed, it will take care of additional libraries we'll need the for current and future projects.
 
