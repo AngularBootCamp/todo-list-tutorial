@@ -179,14 +179,44 @@ Add the following style to `item.component.css`:
 }
 ```
 
-Note: Don't forget to add the CSS classes to the template code of your specified component like this:
+Now you'll want to update your component templates to use all the CSS classes you just created.
 
-```ts
-@Component({
-  ...
-  template: `
-    <button class="btn btn-red" (click)="removeItem()">
-  `,
+In `ListManagerComponent`:
+
+```html
+<div class="todo-app">
+  <h1>
+    {{ title }}
+  </h1>
+
+  <todo-input (submit)="addItem($event)"></todo-input>
+
+  <ul>
+    <li *ngFor="let item of todoList">
+      <todo-item [todoItem]="item"></todo-item>
+    </li>
+  </ul>
+</div>
+```
+
+In `InputComponent`:
+
+```html
+<input class="todo-input"
+      [value]="title"
+      (keyup.enter)="changeTitle($event.target.value)"
+      #inputElement>
+<button class="btn" (click)="changeTitle(inputElement.value)">
+  Save
+</button>
+```
+
+In `ItemComponent`:
+
+```html
+<div class="todo-item">
+  {{ todoItem.title }}
+</div>
 ```
 
 You can change the style as you wish - the size of elements, the colors - however you'd like!
