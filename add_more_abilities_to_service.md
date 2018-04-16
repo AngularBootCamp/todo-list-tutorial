@@ -17,8 +17,8 @@ This will allow us to call the same method from everywhere across the applicatio
 And now we can change our code in `app/list-manager/list-manager.component.ts` to call the `addItem` method directly from the service like so:
 
 ```ts
-addItem(item): void {
-  this.todoListService.addItem(item);
+addItem(title): void {
+  this.todoListService.addItem({ title });
 }
 ```
 
