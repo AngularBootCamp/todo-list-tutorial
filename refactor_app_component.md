@@ -20,3 +20,4 @@ ng g c list-manager -it
 
 That's it! Now we can go on.
 
+[See the results on StackBlitz](https://stackblitz.com/github/angularbootcamp/todo-list-tutorial-steps/tree/step-12_Refactor_App_Component)
